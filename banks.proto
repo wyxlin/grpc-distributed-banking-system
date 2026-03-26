@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package banking;
+
+service Banks {              
+    rpc MsgDelivery (MsgRequest) returns (MsgResponse); 
+}
+
+message MsgRequest {
+    int32 customer_id = 1;
+    string interface = 2;      
+    double money = 3;          
+}
+
+message MsgResponse {
+    string result = 1;          
+    double balance = 2;       
+}
